@@ -14,11 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          textTheme:
-              Theme.of(context).textTheme.apply(displayColor: kBlackColor)),
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kBlackColor),
+      ),
       home: WelcomeScreen(),
     );
   }
@@ -58,13 +59,7 @@ class WelcomeScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width * .6,
               child: RoundedButton(
                 fontsize: 20,
-                press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => HomeScreen() ),
-                  );
-                },
+                // press: () {},
                 text: 'start reading',
                 verticalPadding: 16,
               ),

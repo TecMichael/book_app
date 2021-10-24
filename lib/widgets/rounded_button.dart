@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-  final Function press;
+  // final Function() press;
   final double verticalPadding;
   final double fontsize;
   const RoundedButton({
     Key? key,
     required this.text,
-    required this.press,
+    // required this.press,
     this.verticalPadding = 16,
     this.fontsize = 16,
   }) : super(key: key);
@@ -17,7 +17,10 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: press,
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => HomeScreen()));
+      },
       child: Container(
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(vertical: 16),
